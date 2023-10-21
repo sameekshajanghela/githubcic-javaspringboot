@@ -3,7 +3,7 @@ name: Deploy java container
 on:
   push:
     branches: 
-      -master
+      - master
       
 jobs:
   build:
