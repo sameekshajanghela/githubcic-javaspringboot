@@ -28,20 +28,20 @@ jobs:
 
     
     
-    - uses: actions/cache@v1
-    - name: Cache SonarQube packages
-      with:
-        path: ~/.sonar/cache
-        key: ${{ runner.os }}-sonar
-        restore-keys: ${{ runner.os }}-sonar
+    # - uses: actions/cache@v1
+    # - name: Cache SonarQube packages
+    #   with:
+    #     path: ~/.sonar/cache
+    #     key: ${{ runner.os }}-sonar
+    #     restore-keys: ${{ runner.os }}-sonar
         
     
-    - uses: actions/cache@v1
-    - name: Cache Maven packages
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
+    # - uses: actions/cache@v1
+    # - name: Cache Maven packages
+    #   with:
+    #     path: ~/.m2
+    #     key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+    #     restore-keys: ${{ runner.os }}-m2
         
     - name: Build and analyze
       env:
