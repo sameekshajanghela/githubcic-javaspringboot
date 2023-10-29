@@ -26,7 +26,7 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-      
+  #h    
     - name: Static Code Analysis using Sonarqube
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
