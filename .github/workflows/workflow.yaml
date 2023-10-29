@@ -38,9 +38,9 @@ jobs:
       with:
         serverUrl: http://52.66.204.144:8081/
         username: admin
-        password: ${{ secrets.password }}
+        password: ${{ secrets.NEXUS_PASSWORD }}
         format: maven2
         repository: maven-releases
         coordinates: groupId=com.example artifactId=app version=1.0.0
         assets: extension=jar
-        filename: ./target/spring-boot-.jar
+        filename: ./target/spring-boot-web.jar
