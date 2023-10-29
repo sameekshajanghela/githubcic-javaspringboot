@@ -45,7 +45,7 @@ jobs:
         coordinates: groupId=com.mkyong artifactId=docker-spring-boot version=1.0
         assets: extension=jar
         filename: ./target/spring-boot-web.jar
-
+#vggg
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
