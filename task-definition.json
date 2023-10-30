@@ -2,7 +2,7 @@
     "taskDefinitionArn": "arn:aws:ecs:ap-south-1:854200544263:task-definition/DEV-SG-default-api:2",
     "containerDefinitions": [
         {
-            "name": "docker-container",
+            "name": "api",
             "image": "549593693192.dkr.ecr.us-east-1.amazonaws.com/sg-repo:latest",
             "cpu": 0,
             "memory": 512,
