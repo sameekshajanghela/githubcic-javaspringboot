@@ -1,0 +1,44 @@
+{
+    "family": "DEV-SG-default-api",
+    "taskRoleArn": "arn:aws:iam::854200544263:role/DEV-SG-default-api-task",
+    "executionRoleArn": "arn:aws:iam::854200544263:role/DEV-SG-default-task-exec-role",
+    "networkMode": "bridge",
+    "containerDefinitions": [
+        {
+            "name": "docker-container",
+            "image": "549593693192.dkr.ecr.us-east-1.amazonaws.com/sg-repo:latest",
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            },
+            "cpu": 0,
+            "memory": 512,
+            "memoryReservation": 0,
+            "links": [
+                ""
+            ],
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 0,
+                    "protocol": "tcp",
+                    "name": "",
+                    "appProtocol": "http",
+                    "containerPortRange": ""
+                }
+            ],
+            "essential": true,
+            "entryPoint": [
+                ""
+            ],
+            "command": [
+                ""
+            ],
+            "environment": [],
+            "mountPoints": [
+                {
+                    "sourceVolume": "static",
+                    "containerPath": "/vol/web",
+                    "readOnly": true
+                }
+            
+            ]
