@@ -1,46 +1,86 @@
 {
-    "family": "DEV-SG-default-api",
-    "taskRoleArn": "arn:aws:iam::854200544263:role/DEV-SG-default-api-task",
-    "executionRoleArn": "arn:aws:iam::854200544263:role/DEV-SG-default-task-exec-role",
-    "networkMode": "bridge",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:854200544263:task-definition/DEV-SG-default-api:2",
     "containerDefinitions": [
         {
             "name": "docker-container",
             "image": "549593693192.dkr.ecr.us-east-1.amazonaws.com/sg-repo:latest",
-            "repositoryCredentials": {
-                "credentialsParameter": ""
-            },
             "cpu": 0,
             "memory": 512,
-            "memoryReservation": 0,
-            "links": [
-                ""
-            ],
             "portMappings": [
                 {
                     "containerPort": 8080,
                     "hostPort": 0,
-                    "protocol": "tcp",
-                    "name": "",
-                    "appProtocol": "http",
-                    "containerPortRange": ""
+                    "protocol": "tcp"
                 }
             ],
             "essential": true,
-            "entryPoint": [
-                ""
-            ],
-            "command": [
-                ""
-            ],
             "environment": [],
             "mountPoints": [
                 {
                     "sourceVolume": "static",
                     "containerPath": "/vol/web",
-                    "readOnly": true
+                    "readOnly": false
                 }
-            
-            ]
-            
+            ],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "DEV-SG-default-api",
+                    "awslogs-region": "ap-south-1",
+                    "awslogs-stream-prefix": "api"
+                }
+            }
+        }
+    ],
+    "family": "DEV-SG-default-api",
+    "taskRoleArn": "arn:aws:iam::854200544263:role/DEV-SG-default-api-task",
+    "executionRoleArn": "arn:aws:iam::854200544263:role/DEV-SG-default-task-exec-role",
+    "networkMode": "bridge",
+    "revision": 2,
+    "volumes": [
+        {
+            "name": "static",
+            "host": {}
+        }
+    ],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "tags": [
+        {
+            "key": "Project",
+            "value": "PROJECT-SG"
+        },
+        {
+            "key": "Environment",
+            "value": "default"
+        }
+    ]
 }
